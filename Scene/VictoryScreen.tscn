@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://bdp5bfddp5siy"]
+
+[ext_resource type="Script" uid="uid://djgn7ogjyt35k" path="res://Scripts/victory_screen.gd" id="1_yy1s7"]
+[ext_resource type="Texture2D" uid="uid://c4xlw40507pqn" path="res://Art/UI/sundawn_Loopable_87x56.png" id="2_0iswo"]
+[ext_resource type="AudioStream" uid="uid://bpx35a3kqsdlq" path="res://Art/Audio/1. Winning Sight.wav" id="2_cbb6a"]
+[ext_resource type="LabelSettings" uid="uid://cw2cn1mpuupvk" path="res://Art/new_label_settings.tres" id="3_r6y5p"]
+[ext_resource type="FontFile" uid="uid://chpcf034nk44t" path="res://Art/ruler_9_v2.1/Ruler 9.ttf" id="4_4baso"]
+[ext_resource type="Texture2D" uid="uid://io5ud81kqnae" path="res://Art/UI/play01.png" id="5_4baso"]
+[ext_resource type="Texture2D" uid="uid://dm56igsoq1u5u" path="res://Art/UI/play03.png" id="6_cbb6a"]
+[ext_resource type="Texture2D" uid="uid://dw805k1xep6st" path="res://Art/UI/play02.png" id="7_2p2lg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_x1v3d"]
+font = ExtResource("4_4baso")
+font_size = 30
+
+[node name="VictoryScreen" type="Control" unique_id=1896641030]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yy1s7")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1140383690]
+stream = ExtResource("2_cbb6a")
+autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=755469337]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0iswo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1605308972]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VictoryLabel" type="Label" parent="VBoxContainer" unique_id=1502348929]
+layout_mode = 2
+text = "VICTORY!"
+label_settings = ExtResource("3_r6y5p")
+horizontal_alignment = 1
+
+[node name="FinalTimeLabel" type="Label" parent="VBoxContainer" unique_id=1289651804]
+layout_mode = 2
+text = "Final Time: --:--:--"
+label_settings = SubResource("LabelSettings_x1v3d")
+horizontal_alignment = 1
+
+[node name="ReplayButton" type="TextureButton" parent="VBoxContainer" unique_id=2001419702]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_4baso")
+texture_pressed = ExtResource("6_cbb6a")
+texture_hover = ExtResource("7_2p2lg")
+
+[connection signal="pressed" from="VBoxContainer/ReplayButton" to="." method="_on_replay_button_pressed"]

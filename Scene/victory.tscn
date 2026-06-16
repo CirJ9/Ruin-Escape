@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://djv3221ra8007"]
+
+[ext_resource type="Texture2D" uid="uid://bghtt3e66hl7l" path="res://Art/Tileset/base.png" id="1_7hcio"]
+[ext_resource type="Script" uid="uid://bjgpkibdlnogo" path="res://Scripts/victory.gd" id="1_ihg35"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihg35"]
+atlas = ExtResource("1_7hcio")
+region = Rect2(1280, 4096, 256, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45hh1"]
+atlas = ExtResource("1_7hcio")
+region = Rect2(1536, 4096, 256, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8ppf"]
+atlas = ExtResource("1_7hcio")
+region = Rect2(1792, 4096, 256, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgs6o"]
+atlas = ExtResource("1_7hcio")
+region = Rect2(2048, 4096, 256, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_it7qj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihg35")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45hh1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8ppf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgs6o")
+}],
+"loop": true,
+"name": &"victory",
+"speed": 7.0
+}]
+
+[node name="VictoryCheckpoint" type="Area2D" unique_id=1277117402]
+script = ExtResource("1_ihg35")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1355946630]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_it7qj")
+animation = &"victory"
+frame_progress = 0.38757017
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1370694918]
+polygon = PackedVector2Array(-72, 160, -35, 137, 47, 138, 75, 162, 75, 188, 48, 213, -43, 213, -72, 191)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

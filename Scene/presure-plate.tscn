@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://63gulv3ye62g"]
+
+[ext_resource type="Script" uid="uid://2tpglmpgv1sb" path="res://Scene/area_2d.gd" id="1_sf0o4"]
+[ext_resource type="Texture2D" uid="uid://bghtt3e66hl7l" path="res://Art/Tileset/base.png" id="2_1ect7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iae7v"]
+atlas = ExtResource("2_1ect7")
+region = Rect2(2560, 0, 256, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpm6e"]
+atlas = ExtResource("2_1ect7")
+region = Rect2(2304, 0, 256, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0afdw"]
+animations = [{
+"frames": [{
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_iae7v")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_hpm6e")
+}],
+"loop": false,
+"name": &"presure-plate",
+"speed": 8.0
+}]
+
+[node name="Area2D" type="Area2D" unique_id=650823015]
+texture_filter = 1
+script = ExtResource("1_sf0o4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1520170622]
+sprite_frames = SubResource("SpriteFrames_0afdw")
+animation = &"presure-plate"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1785382473]
+position = Vector2(3, -16)
+polygon = PackedVector2Array(-16, 139, 10, 139, 87, 177, 87, 190, 10, 229, -17, 229, -93, 191, -93, 177)

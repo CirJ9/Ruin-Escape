@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cy2ojfxxbmp7o"
+path="res://.godot/imported/16. Estacy Records.wav-2d1880a7beb3cb1c59d3d48f53ae488c.sample"
+
+[deps]
+
+source_file="res://Art/Audio/16. Estacy Records.wav"
+dest_files=["res://.godot/imported/16. Estacy Records.wav-2d1880a7beb3cb1c59d3d48f53ae488c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

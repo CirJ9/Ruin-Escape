@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dx2wmak0rkelf"]
+
+[ext_resource type="Texture2D" uid="uid://bghtt3e66hl7l" path="res://Art/Tileset/base.png" id="1_pub2v"]
+[ext_resource type="Script" uid="uid://c2aflwcso7w6v" path="res://Scripts/checkpoint.gd" id="1_vukaf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vukaf"]
+atlas = ExtResource("1_pub2v")
+region = Rect2(2816, 2048, 256, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqt28"]
+atlas = ExtResource("1_pub2v")
+region = Rect2(3072, 2048, 256, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2iojn"]
+animations = [{
+"frames": [{
+"duration": 15.0,
+"texture": SubResource("AtlasTexture_vukaf")
+}, {
+"duration": 15.0,
+"texture": SubResource("AtlasTexture_kqt28")
+}],
+"loop": false,
+"name": &"checkpoint",
+"speed": 13.0
+}]
+
+[node name="Area2D" type="Area2D" unique_id=534899121]
+script = ExtResource("1_vukaf")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1127038920]
+polygon = PackedVector2Array(-14, 139, 13, 139, 90, 177, 90, 191, 14, 229, -14, 229, -90, 191, -90, 177)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1018886211]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_2iojn")
+animation = &"checkpoint"
+frame = 1
+frame_progress = 1.0

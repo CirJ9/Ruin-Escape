@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dmv5chfdcoqo"]
+
+[ext_resource type="Script" uid="uid://su414ywk520v" path="res://Scripts/hud.gd" id="1_cevek"]
+[ext_resource type="LabelSettings" uid="uid://cw2cn1mpuupvk" path="res://Art/new_label_settings.tres" id="2_3quw2"]
+
+[node name="HUD" type="CanvasLayer" unique_id=2141094754]
+script = ExtResource("1_cevek")
+
+[node name="TimerLabel" type="Label" parent="." unique_id=2013612830]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -179.0
+offset_top = 3.0
+offset_right = -4.0
+offset_bottom = 54.0
+grow_horizontal = 0
+text = "00:00:00"
+label_settings = ExtResource("2_3quw2")
+horizontal_alignment = 2
+autowrap_mode = 3

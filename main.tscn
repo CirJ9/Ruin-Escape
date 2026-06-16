@@ -1,0 +1,278 @@
+[gd_scene format=4 uid="uid://bv3gum3en5j8a"]
+
+[ext_resource type="PackedScene" uid="uid://c5il6t2tna7m1" path="res://Scene/map.tscn" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://c7bc2td111637" path="res://Scripts/room.gd" id="2_5vw27"]
+[ext_resource type="PackedScene" uid="uid://cofjmyk6qnt52" path="res://Scene/door.tscn" id="2_7mycd"]
+[ext_resource type="TileSet" uid="uid://7qj280epdemo" path="res://Art/dungeon-TS.tres" id="2_272bh"]
+[ext_resource type="PackedScene" uid="uid://disx0ku6uxok6" path="res://Scene/player.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://63gulv3ye62g" path="res://Scene/presure-plate.tscn" id="3_272bh"]
+[ext_resource type="PackedScene" uid="uid://dhoxfsbd47204" path="res://Scene/pushable-block.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://dx2wmak0rkelf" path="res://Scene/checkpoint.tscn" id="5_7mycd"]
+[ext_resource type="PackedScene" uid="uid://dmv5chfdcoqo" path="res://Scene/hud.tscn" id="9_kek77"]
+[ext_resource type="PackedScene" uid="uid://djv3221ra8007" path="res://Scene/victory.tscn" id="10_4c57u"]
+[ext_resource type="AudioStream" uid="uid://cy2ojfxxbmp7o" path="res://Art/Audio/16. Estacy Records.wav" id="11_efxa6"]
+
+[node name="main" type="Node2D" unique_id=495390949]
+y_sort_enabled = true
+
+[node name="Map" parent="." unique_id=549037283 instance=ExtResource("1_0xm2m")]
+
+[node name="Room1" type="Node2D" parent="." unique_id=1778062060]
+y_sort_enabled = true
+script = ExtResource("2_5vw27")
+
+[node name="tutorial-door" parent="Room1" unique_id=562933876 instance=ExtResource("2_7mycd")]
+position = Vector2(1604, 508)
+door_direction = "door-2"
+
+[node name="tutorial-plate" parent="Room1" unique_id=650823015 node_paths=PackedStringArray("target_door") instance=ExtResource("3_272bh")]
+position = Vector2(1292, 316)
+target_door = NodePath("../tutorial-door")
+
+[node name="barrel1" parent="Room1" unique_id=545174211 instance=ExtResource("3_h2yge")]
+position = Vector2(1255, 697)
+
+[node name="Room2" type="Node2D" parent="." unique_id=98934685]
+y_sort_enabled = true
+script = ExtResource("2_5vw27")
+
+[node name="R2-Door" parent="Room2" unique_id=630377635 instance=ExtResource("2_7mycd")]
+z_index = 1
+position = Vector2(3130, 441)
+door_direction = "door-4"
+required_plates = 2
+
+[node name="R2-Plate" parent="Room2" unique_id=1536857964 node_paths=PackedStringArray("target_door") instance=ExtResource("3_272bh")]
+position = Vector2(3122, 15)
+target_door = NodePath("../R2-Door")
+
+[node name="R2-Plate2" parent="Room2" unique_id=1564060918 node_paths=PackedStringArray("target_door") instance=ExtResource("3_272bh")]
+position = Vector2(2592, 268)
+target_door = NodePath("../R2-Door")
+
+[node name="barrel2" parent="Room2" unique_id=1708967554 instance=ExtResource("3_h2yge")]
+position = Vector2(2381, 320)
+
+[node name="barrel3" parent="Room2" unique_id=568821947 instance=ExtResource("3_h2yge")]
+z_index = 1
+position = Vector2(2768, 82)
+
+[node name="checkpoint 2" parent="Room2" unique_id=534899121 instance=ExtResource("5_7mycd")]
+position = Vector2(1914, -2)
+
+[node name="Decor1" type="TileMapLayer" parent="Room2" unique_id=318102099]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAMAPb/kAAWAAoAAAAJAPn/kAAWAAoAAAA=")
+tile_set = ExtResource("2_272bh")
+
+[node name="Room3" type="Node2D" parent="." unique_id=1721135887]
+y_sort_enabled = true
+script = ExtResource("2_5vw27")
+
+[node name="R3-Door" parent="Room3" unique_id=1016707469 instance=ExtResource("2_7mycd")]
+z_index = 1
+position = Vector2(3002, 1273)
+door_direction = "door-4"
+required_plates = 2
+
+[node name="R3-Plate" parent="Room3" unique_id=1063113612 node_paths=PackedStringArray("target_door") instance=ExtResource("3_272bh")]
+position = Vector2(3517, 367)
+target_door = NodePath("../R3-Door")
+
+[node name="R3-Plate2" parent="Room3" unique_id=1179883788 node_paths=PackedStringArray("target_door") instance=ExtResource("3_272bh")]
+position = Vector2(3527, 525)
+target_door = NodePath("../R3-Door")
+
+[node name="barrel" parent="Room3" unique_id=1088763156 instance=ExtResource("3_h2yge")]
+position = Vector2(2542, 1028)
+
+[node name="barrel2" parent="Room3" unique_id=567114964 instance=ExtResource("3_h2yge")]
+position = Vector2(2759, 1153)
+
+[node name="checkpoint 3" parent="Room3" unique_id=1374306586 instance=ExtResource("5_7mycd")]
+position = Vector2(3695, 433)
+
+[node name="Decor2" type="TileMapLayer" parent="Room3" unique_id=1171057555]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAARAPz/kAAOAAkAAAASAPr/kAAOAAkAAAARAPj/kAAOAAkAAAA=")
+tile_set = ExtResource("2_272bh")
+
+[node name="Room4" type="Node2D" parent="." unique_id=257498362]
+y_sort_enabled = true
+script = ExtResource("2_5vw27")
+
+[node name="R4-Door" parent="Room4" unique_id=548585857 instance=ExtResource("2_7mycd")]
+z_index = 1
+position = Vector2(3331, 1947)
+door_direction = "door-3"
+
+[node name="R4-Plate" parent="Room4" unique_id=232098986 node_paths=PackedStringArray("target_door") instance=ExtResource("3_272bh")]
+position = Vector2(3066, 1317)
+target_door = NodePath("../R4-Door")
+
+[node name="barrel" parent="Room4" unique_id=1408455086 instance=ExtResource("3_h2yge")]
+position = Vector2(4030, 1864)
+
+[node name="Decor2" type="TileMapLayer" parent="Room4" unique_id=1994218415]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAYAP//kAARAAkAAAAYAP7/kAARAAkAAAAYAP3/kAARAAkAAAAaAPz/kAARAAkAAAAaAP3/kAARAAkAAAAaAP7/kAARAAkAAAAcAAAAkAARAAkAAAAcAP//kAARAAkAAAAcAP7/kAARAAkAAAAcAP3/kAARAAkAAAAXAP3/kAATAAAAAAA=")
+tile_set = ExtResource("2_272bh")
+
+[node name="checkpoint 4" parent="Room4" unique_id=173132753 instance=ExtResource("5_7mycd")]
+position = Vector2(3317, 1228)
+
+[node name="Room5" type="Node2D" parent="." unique_id=275896565]
+y_sort_enabled = true
+script = ExtResource("2_5vw27")
+
+[node name="R5-Door" parent="Room5" unique_id=1851992620 instance=ExtResource("2_7mycd")]
+z_index = 1
+position = Vector2(3509, 2554)
+door_direction = "door-4"
+required_plates = 4
+
+[node name="R5-Plate" parent="Room5" unique_id=1301374025 node_paths=PackedStringArray("target_door") instance=ExtResource("3_272bh")]
+position = Vector2(3058, 2142)
+target_door = NodePath("../R5-Door")
+
+[node name="R5-Plate2" parent="Room5" unique_id=1050451546 node_paths=PackedStringArray("target_door") instance=ExtResource("3_272bh")]
+position = Vector2(3326, 1991)
+target_door = NodePath("../R5-Door")
+
+[node name="R5-Plate3" parent="Room5" unique_id=1424633906 node_paths=PackedStringArray("target_door") instance=ExtResource("3_272bh")]
+position = Vector2(3180, 2208)
+target_door = NodePath("../R5-Door")
+
+[node name="R5-Plate4" parent="Room5" unique_id=1213967178 node_paths=PackedStringArray("target_door") instance=ExtResource("3_272bh")]
+position = Vector2(3470, 2062)
+target_door = NodePath("../R5-Door")
+
+[node name="R5-Door2" parent="Room5" unique_id=523687718 instance=ExtResource("2_7mycd")]
+z_index = 1
+position = Vector2(3002, 2042)
+door_direction = "door-4"
+
+[node name="R5-Plate6" parent="Room5" unique_id=782664004 node_paths=PackedStringArray("target_door") instance=ExtResource("3_272bh")]
+position = Vector2(2847, 2044)
+target_door = NodePath("../R5-Door2")
+
+[node name="R5-Door3" parent="Room5" unique_id=1375589416 instance=ExtResource("2_7mycd")]
+z_index = 1
+position = Vector2(2364, 1989)
+door_direction = "door-4"
+
+[node name="R5-Plate7" parent="Room5" unique_id=859695195 node_paths=PackedStringArray("target_door") instance=ExtResource("3_272bh")]
+position = Vector2(2594, 1783)
+target_door = NodePath("../R5-Door3")
+
+[node name="R5-Plate8" parent="Room5" unique_id=764175285 node_paths=PackedStringArray("target_door") instance=ExtResource("3_272bh")]
+position = Vector2(1786, 1622)
+target_door = NodePath("../R5-Door4")
+
+[node name="R5-Door4" parent="Room5" unique_id=299518955 instance=ExtResource("2_7mycd")]
+z_index = 1
+position = Vector2(2364, 1718)
+door_direction = "door-4"
+
+[node name="barrel" parent="Room5" unique_id=596327708 instance=ExtResource("3_h2yge")]
+position = Vector2(3202, 2278)
+
+[node name="barrel2" parent="Room5" unique_id=1929809378 instance=ExtResource("3_h2yge")]
+position = Vector2(2748, 1924)
+
+[node name="barrel3" parent="Room5" unique_id=540669494 instance=ExtResource("3_h2yge")]
+position = Vector2(2175, 1900)
+
+[node name="barrel4" parent="Room5" unique_id=336680971 instance=ExtResource("3_h2yge")]
+position = Vector2(2191, 1556)
+
+[node name="Decor2" type="TileMapLayer" parent="Room5" unique_id=1375696817]
+y_sort_enabled = true
+tile_set = ExtResource("2_272bh")
+
+[node name="checkpoint 4" parent="Room5" unique_id=4709434 instance=ExtResource("5_7mycd")]
+position = Vector2(3551, 1878)
+
+[node name="Room6" type="Node2D" parent="." unique_id=1608123951]
+y_sort_enabled = true
+script = ExtResource("2_5vw27")
+
+[node name="R6-Door" parent="Room6" unique_id=795433175 instance=ExtResource("2_7mycd")]
+z_index = 1
+position = Vector2(3899, 3386)
+door_direction = "door-4"
+required_plates = 2
+
+[node name="R6-Plate" parent="Room6" unique_id=320892232 node_paths=PackedStringArray("target_door") instance=ExtResource("3_272bh")]
+position = Vector2(3533, 3161)
+target_door = NodePath("../R6-Door")
+
+[node name="R6-Plate2" parent="Room6" unique_id=2040165788 node_paths=PackedStringArray("target_door") instance=ExtResource("3_272bh")]
+position = Vector2(3876, 2418)
+target_door = NodePath("../R6-Door")
+
+[node name="barrel2" parent="Room6" unique_id=1468230990 instance=ExtResource("3_h2yge")]
+position = Vector2(4274, 2885)
+
+[node name="barrel3" parent="Room6" unique_id=637808670 instance=ExtResource("3_h2yge")]
+position = Vector2(2994, 3122)
+
+[node name="checkpoint 6" parent="Room6" unique_id=1511784763 instance=ExtResource("5_7mycd")]
+position = Vector2(3750, 2351)
+
+[node name="Decor1" type="TileMapLayer" parent="Room6" unique_id=851681137]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAlAAYAkAAHAAIAAAAmAAkAkAAHAAIAAAAlAAcAkAAHAAIAAAAjAAsAkAAHAAIAAAAjAAoAkAAHAAIAAAAmAAsAkAAHAAIAAAA=")
+tile_set = ExtResource("2_272bh")
+
+[node name="Room7" type="Node2D" parent="." unique_id=252467516]
+y_sort_enabled = true
+script = ExtResource("2_5vw27")
+
+[node name="R7-Door" parent="Room7" unique_id=856521091 instance=ExtResource("2_7mycd")]
+z_index = 1
+position = Vector2(4867, 3358)
+door_direction = "door-3"
+required_plates = 2
+
+[node name="R7-Plate" parent="Room7" unique_id=906720120 node_paths=PackedStringArray("target_door") instance=ExtResource("3_272bh")]
+position = Vector2(4628, 3064)
+target_door = NodePath("../R7-Door")
+
+[node name="R7-Plate2" parent="Room7" unique_id=1381829739 node_paths=PackedStringArray("target_door") instance=ExtResource("3_272bh")]
+position = Vector2(5405, 3073)
+target_door = NodePath("../R7-Door")
+
+[node name="R7-Plate3" parent="Room7" unique_id=420060133 node_paths=PackedStringArray("target_door") instance=ExtResource("3_272bh")]
+position = Vector2(4482, 3629)
+target_door = NodePath("../R7-Door")
+
+[node name="barrel2" parent="Room7" unique_id=2023861560 instance=ExtResource("3_h2yge")]
+position = Vector2(4489, 3445)
+
+[node name="barrel4" parent="Room7" unique_id=1264746699 instance=ExtResource("3_h2yge")]
+position = Vector2(4741, 3595)
+
+[node name="barrel3" parent="Room7" unique_id=1953339778 instance=ExtResource("3_h2yge")]
+position = Vector2(4629, 3520)
+
+[node name="checkpoint 7" parent="Room7" unique_id=1196374868 instance=ExtResource("5_7mycd")]
+position = Vector2(4258, 3249)
+
+[node name="Decor1" type="TileMapLayer" parent="Room7" unique_id=1430726698]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAsAAgAkAAHAAIAAAAtAAYAkAAHAAIAAAArAAgAkAAHAAEAAAAuAAsAkAATAAAAAAAtAAsAkAATAAAAAAAsAAsAkAATAAAAAAA=")
+tile_set = ExtResource("2_272bh")
+
+[node name="Player" parent="." unique_id=226819723 instance=ExtResource("2_h2yge")]
+position = Vector2(983, 707)
+
+[node name="HUD" parent="." unique_id=2141094754 instance=ExtResource("9_kek77")]
+
+[node name="VictoryCheckpoint" parent="." unique_id=1277117402 instance=ExtResource("10_4c57u")]
+position = Vector2(4995, 2851)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=182984719]
+stream = ExtResource("11_efxa6")
+volume_db = -9.833
+autoplay = true

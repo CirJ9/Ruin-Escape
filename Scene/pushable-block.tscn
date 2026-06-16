@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dhoxfsbd47204"]
+
+[ext_resource type="Script" uid="uid://64548d7h152m" path="res://Scene/character_body_2d.gd" id="1_aqbt2"]
+[ext_resource type="Texture2D" uid="uid://dr8q4p87n7ylw" path="res://Art/Tileset/barrel_E.png" id="2_3ti32"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yp6j0"]
+radius = 28.5
+height = 83.5
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1708967554 groups=["Pushable"]]
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(9, 1)
+script = ExtResource("1_aqbt2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1015224935]
+y_sort_enabled = true
+texture = ExtResource("2_3ti32")
+offset = Vector2(0, -200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1051960881]
+position = Vector2(0, -38)
+shape = SubResource("CapsuleShape2D_yp6j0")

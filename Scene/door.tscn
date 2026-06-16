@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://cofjmyk6qnt52"]
+
+[ext_resource type="Texture2D" uid="uid://cqvp73mw1xvbk" path="res://Art/Tileset/dungeon.png" id="1_ba8gm"]
+[ext_resource type="Script" uid="uid://dygs4iy4jghy" path="res://Scripts/door.gd" id="1_v6xrn"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t1p54"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kni7"]
+atlas = ExtResource("1_ba8gm")
+region = Rect2(4096, 1024, 256, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmuuw"]
+atlas = ExtResource("1_ba8gm")
+region = Rect2(3840, 3072, 256, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwlx2"]
+atlas = ExtResource("1_ba8gm")
+region = Rect2(4096, 1536, 256, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nccli"]
+atlas = ExtResource("1_ba8gm")
+region = Rect2(3840, 3584, 256, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtnyr"]
+atlas = ExtResource("1_ba8gm")
+region = Rect2(4096, 2048, 256, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcr01"]
+atlas = ExtResource("1_ba8gm")
+region = Rect2(4096, 0, 256, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krdiv"]
+atlas = ExtResource("1_ba8gm")
+region = Rect2(4096, 2560, 256, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1f7f"]
+atlas = ExtResource("1_ba8gm")
+region = Rect2(4096, 512, 256, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jh4r8"]
+animations = [{
+"frames": [{
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_8kni7")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_lmuuw")
+}],
+"loop": false,
+"name": &"door-1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_xwlx2")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_nccli")
+}],
+"loop": false,
+"name": &"door-2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_vtnyr")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_mcr01")
+}],
+"loop": false,
+"name": &"door-3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_krdiv")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_u1f7f")
+}],
+"loop": true,
+"name": &"door-4",
+"speed": 5.0
+}]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=562933876]
+y_sort_enabled = true
+physics_material_override = SubResource("PhysicsMaterial_t1p54")
+script = ExtResource("1_v6xrn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1985987091]
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_jh4r8")
+animation = &"door-4"
+offset = Vector2(0, -200)
+
+[node name="CollisionDoor1" type="CollisionPolygon2D" parent="." unique_id=199325636]
+visible = false
+position = Vector2(37, -78)
+polygon = PackedVector2Array(-32, -151, -7, -136, -4, 21, -132, 86, -163, 72, -163, -87)
+
+[node name="CollisionDoor2" type="CollisionPolygon2D" parent="." unique_id=1456817349]
+visible = false
+position = Vector2(-58, -29)
+polygon = PackedVector2Array(89, -86, 91, 69, 58, 86, -69, 22, -67, -136, -41, -151)
+
+[node name="CollisionDoor3" type="CollisionPolygon2D" parent="." unique_id=384594037]
+visible = false
+position = Vector2(37, -78)
+polygon = PackedVector2Array(90, -86, 92, 71, 60, 86, -69, 22, -65, -137, -39, -151)
+
+[node name="CollisionDoor4" type="CollisionPolygon2D" parent="." unique_id=548850286]
+visible = false
+position = Vector2(133, -28)
+polygon = PackedVector2Array(-33, -152, -6, -137, -4, 21, -132, 85, -164, 70, -161, -87)

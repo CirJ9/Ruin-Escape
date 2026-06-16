@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://cw2cn1mpuupvk"]
+
+[ext_resource type="FontFile" uid="uid://noyikx0kpp77" path="res://Art/hud.tres" id="1_7j561"]
+
+[resource]
+font = ExtResource("1_7j561")
+font_size = 50
+font_color = Color(1, 1, 0.21176471, 1)
+shadow_size = 30
+shadow_color = Color(0.93333334, 0.7254902, 0.23529412, 0)
