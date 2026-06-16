@@ -1,14 +1,12 @@
 # Ruin-Escape
 
-# Ruin Escape
-
 A 2D isometric puzzle adventure game where players explore ancient ruins, solve environmental puzzles, and escape by activating pressure plates to unlock the path forward.
 
-About the Game
+## About the Game
 
 Ruin Escape is a puzzle-based escape game focused on movement, problem-solving, and speed. Players must push barrels onto pressure plates to open doors while navigating through mysterious ruins. The goal is to complete each level and achieve the fastest escape time possible.
 
-Features
+## Features
 
 * Isometric puzzle gameplay
 * Barrel pushing mechanics
@@ -16,7 +14,7 @@ Features
 * Time-based escape challenge
 * Simple exploration and problem-solving mechanics
 
-Objective
+## Objective
 
 Find your way through the ruins by:
 
@@ -25,7 +23,7 @@ Find your way through the ruins by:
 3. Unlocking blocked paths
 4. Escaping in the shortest time possible
 
-Controls
+## Controls
 
 | Key               | Action      |
 | ----------------- | ----------- |
@@ -33,26 +31,26 @@ Controls
 | Space             | Jump        |
 | Shift             | Sprint      |
 
-Built With
+## Built With
 
 * Engine: Godot
 * Language: GDScript
 * Genre: Isometric Puzzle Adventure
 
-Screenshots
+## Screenshots
 
 
 
-How to Run
+## How to Run
 
 1. Download or clone this repository
 2. Open the project using Godot Engine
 3. Run the main scene
 
-👤 Developer
+## 👤 Developer
 
 Created by: Jhonric S, Baguisi
 
-Project Status
+## Project Status
 
 This project is a prototype created as a game development project.
