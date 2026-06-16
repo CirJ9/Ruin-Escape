@@ -1,4 +1,4 @@
-<img width="1154" height="680" alt="titlescreen.png" src="https://github.com/user-attachments/assets/43ae4faa-8f9b-433b-8b56-f966a39631f0" />
+<img width="1154" height="680" alt="titlescreen.png" src="https://github.com/user-attachments/assets/e608d7062c5055dd2a0a8953abf01a11d9bad807" />
 
 # Ruin-Escape
 
