@@ -1,4 +1,6 @@
-<img width="1154" height="680" alt="Screenshot 2026-06-16 212515" src="https://github.com/user-attachments/assets/43ae4faa-8f9b-433b-8b56-f966a39631f0" /># Ruin-Escape
+<img width="1154" height="680" alt="titlescreen.png" src="https://github.com/user-attachments/assets/43ae4faa-8f9b-433b-8b56-f966a39631f0" />
+
+# Ruin-Escape
 
 A 2D isometric puzzle adventure game where players explore ancient ruins, solve environmental puzzles, and escape by activating pressure plates to unlock the path forward.
 
@@ -41,7 +43,9 @@ Find your way through the ruins by:
 
 ## Screenshots
 
-
+![Gameplay Screenshot](Art/Screenshot/gameplay1.png)
+![Gameplay Screenshot](Art/Screenshot/gameplay2.png)
+![Gameplay Screenshot](Art/Screenshot/gameplay3.png)
 
 ## How to Run
 
