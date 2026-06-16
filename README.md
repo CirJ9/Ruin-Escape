@@ -1,4 +1,4 @@
-<img width="1154" height="680" alt="titlescreen.png" src="https://github.com/user-attachments/assets/e608d7062c5055dd2a0a8953abf01a11d9bad807" />
+<img width="1154" height="680" alt="titlescreen.png" src="https://github.com/CirJ9/Ruin-Escape/blob/e608d7062c5055dd2a0a8953abf01a11d9bad807/Art/Screenshot/titlescreen.png" />
 
 # Ruin-Escape
 
